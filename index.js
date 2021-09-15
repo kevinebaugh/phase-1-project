@@ -11,7 +11,7 @@ console.log("Hello, get ready to Teleport! 👍😎👍")
 
 const getUrbanAreas = function() {
   const urbanAreas = []
-  fetch('https://api.teleport.org/api/urban_areas/')
+  fetch("https://api.teleport.org/api/urban_areas/")
   .then(response => response.json())
   .then(data => {
     data["_links"]["ua:item"].forEach(element => {
@@ -30,5 +30,21 @@ const getUrbanAreas = function() {
 document.querySelector("#teleport").addEventListener("click", getUrbanAreas)
 
 const handleUrbanAreaClick = function(event) {
-  console.log(`Urban area ${event.target.id} has been clicked!`)
+  const name = document.querySelector("#name")
+  const internet = document.querySelector("#internet")
+  const water = document.querySelector("#water")
+  const taxi = document.querySelector("#taxi")
+  const guns = document.querySelector("#guns")
+  name.innerText = event.srcElement.innerText
+  const slug = event.target.id
+  console.log(`Urban area ${slug} has been clicked!`)
+  fetch(`https://api.teleport.org/api/urban_areas/slug%3A${slug}/details/`)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+    internet.innerText = "populated in function"
+    water.innerText = "populated in function"
+    taxi.innerText = "populated in function"
+    guns.innerText = "populated in function"
+  })
 }
