@@ -1,0 +1,50 @@
+body {
+  font-family: Helvetica;
+}
+
+#showcase {
+  display: none;
+  text-align: center;
+}
+
+button#teleport {
+  cursor: pointer;
+  width: 400px;
+  height: 200px;
+  font-size: 60px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+table#stats {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+table th {
+  font-size: 1.2em
+}
+
+div#urban-areas {
+  display: flex;
+  flex-wrap: wrap
+}
+
+div.urban-area {
+  cursor: pointer;
+  width: 150px;
+  height: 60px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 24px;
+  padding-top: 20px;
+}
+
+div.urban-area:nth-child(even) {background: #DCFCD3}
+div.urban-area:nth-child(odd) {background: #BFF9CF}
+
+div.urban-area:hover {
+  background: #F9FFD7
+}

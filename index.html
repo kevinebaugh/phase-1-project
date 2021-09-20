@@ -7,28 +7,36 @@
   </head>
   <body>
     <h1>Kevin's Phase 1 Project</h1>
+    <hr>
     <div id="showcase">
-      <h3 id="name">Name</h3>
-      <table>
+      <h2 id="name">Name</h2>
+      <table id="stats">
         <tr>
-          <th>Typical internet download speed (Mbps)</th>
-          <th>Drinking water quality</th>
-          <th>5km taxi ride</th>
-          <th>Guns per 100 residents</th>
+          <th>Internet</th>
+          <th>Drinking water</th>
+          <th>Gun safety</th>
+          <th>Cost of living</th>
         </tr>
         <tr>
-          <td id="internet">placeholder</td>
-          <td id="water">placeholder</td>
-          <td id="taxi">placeholder</td>
-          <td id="guns">placeholder</td>
+          <td id="internet"><meter id="internet-meter" min="0" max="1" low=".25" high =".75" optimum=".99" value="0"></meter></td>
+          <td id="water"><meter id="water-meter" min="0" max="1" low=".25" high =".75" optimum=".99" value="0"></meter></td>
+          <td id="guns"><meter id="guns-meter" min="0" max="1" low=".25" high =".75" optimum=".99" value="0"></meter></td>
+          <td id="taxi"></td>
+        </tr>
+        <tr class="labels">
+          <td>Internet access (download) [Teleport score]</td>
+          <td>Drinking water quality [Teleport score]</td>
+          <td>Lack of guns and gun-related deaths [Teleport score]</td>
+          <td>5km taxi ride (USD)</td>
         </tr>
       </table>
+      <hr>
     </div>
-    <button id="teleport">Teleport!</button>
-    <h2>Urban areas</h1>
-    <ul id=urban-areas>
+    <button id="teleport">Teleport! ✈️</button>
+
+    <div id=urban-areas>
       <!-- Urban areas will go here -->
-    </ul>
+    </div>
   </body>
   <script src="index.js" charset="utf-8"></script>
 </html>
