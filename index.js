@@ -15,7 +15,10 @@ const getUrbanAreas = function() {
   fetch("https://api.teleport.org/api/urban_areas/")
   .then(response => response.json())
   .then(data => {
-    data["_links"]["ua:item"].forEach(element => {
+    // Shuffling the data array a "bad" way because the randomness isn't that important
+    // https://medium.com/@nitinpatel_20236/how-to-shuffle-correctly-shuffle-an-array-in-javascript-15ea3f84bfb
+    const shuffled_data = data["_links"]["ua:item"].sort( () => .5 - Math.random() )
+    shuffled_data.forEach(element => {
       const ua = document.createElement("div")
       ua.innerText = element.name
       ua.className = "urban-area"
